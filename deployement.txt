@@ -1,0 +1,12 @@
+Deployment Steps :
+1- Obtain the following credentials and details
+	HEROKU_EMAIL_ID : hasnainmehmood3435@gmail.com
+	HEROKU_APP_NAME : complete-healthcare
+	HEROKU_API_KEY : e3e01d3e-6966-4b1b-ae94-3639f150967c
+	DOCKERHUB_USERNAME : hassi35
+	DOCKER_HUB_PASSWORD_USER: XXXXXXXX
+2- Create a github repo
+3- Creating Docker Image
+	docker build -t complete-healthcare:latest .
+	docker images 
+	docker run -p 5000:5000 complete-healthcare:latest
