@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}
+Heart Disease Prediction
+{% endblock title %}
+{% block body %}
+
+      <!--Mask-->
+      <div id="intro" class="container-fluid view ">
+        <h1 class="text-center text-capitalize pt-5">Know your chances of getting a heart disease in one Click!</h1> 
+        <hr class="w-75 mx-auto pt-5"><br><br>
+        <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12 my-auto">
+            <img src="/static/img/heart.jpg" class="float-left">
+            
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <form action="{{ url_for('predict_heart')}}" method="post">
+
+              <div class="form-group">
+                <label for="thalach">Maximum Heart Rate Achieved</label>
+                <input class="form-control" type='text' id="thalach" name = "thalach" required="required" placeholder="e.g. 156">
+              </div>
+
+              <div class="form-group">
+                <label for="thalach">ST depression induced by exercise relative to rest</label>
+                <input class="form-control" type='text' id="oldpeak" name = "oldpeak" required="required" placeholder="e.g. 1.0">
+              </div>
+              
+              <div class="form-group">
+                <label for="thalach">Number of major vessels (0-3) colored by flourosopy</label>
+                <input class="form-control" type='text' id="ca" name = "ca" required="required" placeholder="e.g. 1">
+              </div>
+
+              <div class="form-group">
+                <label for="cp">Chest Pain Type</label>
+                <select class="form-control" id="cp" name = "cp" required="required" placeholder="Chest Pain Type">
+                  <option value="0">Typical Angina</option>
+                  <option value="1">Atypical Angina</option>
+                  <option value="2">Non-Anginal Pain</option>
+                  <option value="3">Asymptomatic</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exang">Exercise Induced Angina</label>
+                <select class="form-control" id="exang" name = "exang" required="required" >
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="chol">Serum Cholestoral in mg/dl</label>
+                <input class="form-control" type="text" id="chol" name="chol" required="required" placeholder="e.g. 204">
+              </div>
+
+              <div class="form-group">
+                <label for="chol">Age (Years) </label>
+                <input class="form-control" type="text" id="age" name="age" required="required" placeholder="e.g. 52">
+              </div>
+
+              <div class="form-group">
+                <label for="trestbps">Resting Blood Pressure (in mm Hg)</label>
+                <input class="form-control" type="text" id="trestbps" name="trestbps" required="required" placeholder="e.g. 128">
+              </div>
+
+              <div class="form-group">
+                <label for="slop">Slope of the peak exercise ST segment</label>
+                <select class="form-control" id="slop" name = "slop" required="required">
+                  <option value="0">Upsloping</option>
+                  <option value="1">Flat</option>
+                  <option value="2">Downsloping</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sex">Sex</label>
+                <select class="form-control" id="sex" name = "sex" required="required" >
+                  <option value="1">Male</option>
+                  <option value="0">Female</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="restecg">Thal</label>
+                <select class="form-control" type="number" id="restecg" name="restecg" required="required">
+                <option value="1">Normal</option>
+                <option value="2">Fixed Defect</option>
+                <option value="3">Reversable Defect</option>
+            	</select>
+              </div>
+
+
+              <button type="submit" class="btn btn-danger">Predict</button><br><br>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.Mask-->
+{% endblock body %}

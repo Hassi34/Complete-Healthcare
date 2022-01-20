@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+Kidney Disease Prediction
+{% endblock title %}
+{% block body %}
+</div>
+       <div class="container py-4">
+        {% if prediction_text[0:2] == "Oh" %}
+            <h1>Prediction: <span class='danger'>Oops! You have Kidney disease.</span></h1>
+            <div class="card ">
+                <img src="static/img/positive.webp" class="card-img-top" alt="Positive Cancer">
+                <div class="card-body" >
+                  <p class="card-text"><b>{{prediction_text}}<b></p>
+                </div>
+            </div>
+        {% else %}
+            <h1>Prediction: <span class='safe'>Great! You DON'T have Kidney disease.</span></h1>
+            <div class="card ">
+                <img src="static/img/negative.webp" class="card-img-top" alt="Negative Cancer">
+                <div class="card-body" >
+                  <p class="card-text"><b>{{prediction_text}}<b></p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+{% endblock body %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+Diabetes Prediction
+{% endblock title %}
+{% block body %}
+
+      <!--Mask-->
+      <div id="intro" class="container-fluid view ">
+        <h1 class="text-center text-capitalize pt-5">Know your chances of getting diabetes in one Click!</h1>
+        <hr class="w-75 mx-auto pt-5">
+        <br><br>
+        <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12 my-auto">
+            <img src="/static/img/diabetes.jpg" class="float-left">
+
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <form action="{{ url_for('predict_diabetes')}}" method="post">
+              <div class="form-group">
+                <!-- TODO : Year to accept only year date picker -->
+                <label for="Pregnancies">No. of Pregnencies</label>
+                <input class="form-control" type="number" id="Pregnancies" name="Pregnancies" required="required" placeholder="e.g. 1">
+              </div>
+              <div class="form-group">
+                <label for="Glucose">Glucose Level</label>
+                <input class="form-control" type="number" step="any" id="Glucose" name="Present_Price" required="required" placeholder="e.g. 110">
+              </div>
+              <div class="form-group">
+                <label for="BloodPressure">Current Blood Pressure</label>
+                <input class="form-control" type="number" id="BloodPressure" name="BloodPressure" required="required" placeholder="e.g. 85">
+              </div>
+              <div class="form-group">
+                <label for="BMI">Skin Thickness</label>
+                <input class="form-control" type="number" id="SkinThickness" name="SkinThickness" required="required" placeholder="e.g. 35 ">
+              </div>
+              <div class="form-group">
+                <label for="BMI"> Enter the Insulin value</label>
+                <input class="form-control" type="number" id="'Insulin'" name="'Insulin'" required="required" placeholder="e.g. 94">
+              </div>
+              <div class="form-group">
+                <label for="BMI">Enter the Body Mass Index</label>
+                <input class="form-control" type="text" id="BMI" name="BMI" required="required" placeholder="e.g. 26.2">
+              </div>
+              <div class="form-group">
+                <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+                <input class="form-control" type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required="required" placeholder="e.g. 0.627">
+              </div>
+              <div class="form-group">
+                <label for="Age">Age</label>
+                <input class="form-control" type="number" id="Age" name="Age" required="required" placeholder="e.g. 28">
+              </div>
+              
+              
+              
+              <button type="submit" class="btn btn-danger" >Predict</button><br><br>
+            </form>
+          </div>
+        </div>
+      </div>
+{% endblock body %}

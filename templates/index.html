@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% block body %}
+<div class= "container-fluid px-0">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/img/1.jfif" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Experience the power of AI in HealthCare</h1>
+                <p>Application of AI in the healthcare can have a major impact on the daily working routine of the Doctors. It can reduce the workload of the doctors immensly.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/2.jfif" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Making the Big World for Healthcare Smaller</h1>
+                <p>Still in 2021 many people are not being able to get the proper healthcare services because of the unavailability of required reach of the doctors and hospitals. Using AI, one can have a personal doctor at home!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/3.jfif" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>AI is the new electricity</h1>
+                <p>AI is powering personal devices in our homes and offices similarly to electricity. AI will be the next big thing after the electricity that will hugely impact our daily life</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</div>
+<div class="container marketing my-3">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="/static/img/clock.jfif" alt="CLock Image" width="140" height="140">
+            <h2>Quick Prediction</h2>
+            <p>I have used light ML model that can load within no time without compromising on the accuracy of the prediction. Light models quickly load which helps in better response of the page.</p>
+            
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="rounded-circle" src="/static/img/checklist.jfif" alt="Checklist Image" width="220" height="280">
+                <h2>Wide Range</h2>
+                <p>This Web-App provides a wide range of predicting the contamination multiple diseases like Kidney disease, Diabetes, Liver Infection, Heart Disease & Breast Cancer.</p>
+                
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="/static/img/accuracy.jfif" alt="Accuracy Image" width="140" height="140">
+                    <h2>Highly Accurate</h2>
+                    <p>Though this app provides a wide range and high speed the accuracy has not been compromised. Hyper-parameters have been selected very carefully so that the accuracy is not hampered.</p>
+                    
+                    </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                    <!-- START THE FEATURETTES -->
+                    <hr class="featurette-divider">
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading">Less Doctors<span class="text-muted">: World is facing a huge shortage of Doctors</span></h2>
+                            <p class="lead">The shortage of Medical professionals like doctors, nurses, technicians and infrastructure as given by the report of WHO that 0.76 doctors and 2.09 nurses are present per 1000 people. Additionally, the large number of aging physicians heading into retirement. These physicians are being replaced with a new generation of doctors who prefer to work part-time or in specialties, such as dermatology or neurology, that are less likely to have demanding on-call responsibilities. Generation X individuals see [fewer] patients. They typically place a greater premium on lifestyle factors than their older counterparts, so that would decrease the amount of supply.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/static/img/healthcare prof.jfif" alt="Health Care Professionals">
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                    <div class="row featurette">
+                        <div class="col-md-7 order-md-2">
+                            <h2 class="featurette-heading">Low Accessibility<span class="text-muted">: Non-uniform Accessibility to Healthcare across nation</span></h2>
+                            <p class="lead">The physical access to hospitals is still the major barrier to both preventive and curative health services, and also the major differences between the Rural and the Urban areas. By making use of web technology and AI people in remote areas can also get access to the health-care.</p>
+                        </div>
+                        <div class="col-md-5 order-md-1">
+                            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/static/img/access.jfif" alt="Generic placeholder image">
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading">Affordability: <span class="text-muted">Good healthcare facilities are still a dream of the common people around the globe</span></h2>
+                            <p class="lead">It is the biggest problem many Poor and marginalised are hit the most. Major spending in healthcare in Pakistan is private out-of-pocket. Public spending was around 33% of total spending on health.Amir Omair, an associate professor in the community health sciences department at Lahore’s Fatima Memorial Hospital College of Medicine and Dentistry, told Herald, the local monthly magazine, that people were now consulting doctors only when disease became acute, because of the financial burdens they faced. “Health has become a luxury” BUT Using the technology in a better way, healthcare can be made affordable for everyone!</p>
+                        </div>
+                        <div class="col-md-5">
+                            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/static/img/expensive.jfif"alt="Generic placeholder image">
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                    <!-- /END THE FEATURETTES -->
+                    </div><!-- /.container -->
+                    <!-- FOOTER -->
+                    
+                    <footer class="container">
+                        <div class='footer'>
+                            <div class="contact">
+                                <a target="_blank" href="https://github.com/Hassi34/"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                                <a target="_blank" href="https://www.linkedin.com/in/hasanain-mehmood-a37a4116b/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+                            </div>
+                            <bold><h5 class='footer-description'>Developed with ❤️| Copyright © 2021 Hasnain Mehmood</h5></bold> 
+                        </div>
+                        <bold><h5 class="float-right"><a href="#">Back to top</a></h5></bold>
+                        
+                    </footer>
+                </main>
+                
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+							<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+							<script src="../static/js/vendor/popper.min.js"></script>
+							<script src="../static/js/bootstrap.min.js"></script>
+							<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+							<script src="../static/js/holder.min.js"></script>
+						</body>
+					</html>
+{% endblock body %}

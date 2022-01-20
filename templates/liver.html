@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+Liver Disease Prediction
+{% endblock title %}
+{% block body %}
+
+      <!--Mask-->
+      <div id="intro" class="container-fluid view ">
+        <h1 class="text-center text-capitalize pt-5">Know your chances of getting a liver disease in one Click!</h1>
+        <hr class="w-75 mx-auto pt-5"><br><br>
+        <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12 my-auto">
+            <img src="../static/img/liver.jpg" class="float-left">
+            
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <form action="{{ url_for('predict_liver')}}" method="post">
+
+              <div class="form-group">
+                <label for="Alamine_Aminotransferase">Alamine Aminotransferase</label>
+                <input class="form-control" type="text" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" required="required" placeholder="e.g. 22">
+              </div>
+              <div class="form-group">
+                <label for="Alkaline_Phosphotase">Alkaline Phosphotase</label>
+                <input class="form-control" type="text" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" required="required" placeholder="e.g. 180">
+              </div>
+              <div class="form-group">
+                <label for="Total Bilirubin">Total Bilirubin</label>
+                <input class="form-control" type="text" id="Total Bilirubin" name="Total Bilirubin" required="required" placeholder="e.g. 1.9">
+              </div>
+              <div class="form-group">
+                <label for="Age">Age</label>
+                <input class="form-control" type="number" step="any" id="Age" name="Age" required="required" placeholder="e.g. 26">
+              </div>
+              <div class="form-group">
+                <label for="Albumin_and_Globulin_Ratio">Albumin and Globulin Ratio</label>
+                <input class="form-control" type="text" id="Albumin_and_Globulin_Ratio" name="Albumin_and_Globulin_Ratio" required="required" placeholder="e.g. 1.0">
+              </div> 
+              <div class="form-group">
+                <label for="Gender">Gender</label>
+                <select class="form-control" id="Gender" name = "Gender" required="required" >
+                  <option value="1">Male</option>
+                  <option value="0">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="Total_Protiens">Total Protiens</label>
+                <input class="form-control" type="text" id="Total_Protiens" name="Total_Protiens" required="required" placeholder="e.g. 8.2">
+              </div>
+          
+              <button type="submit" class="btn btn-danger">Predict</button><br><br>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.Mask-->
+{% endblock body %}
