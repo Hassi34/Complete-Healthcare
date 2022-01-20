@@ -1,30 +1,41 @@
+#!/usr/bin/env python
+
+from wsgiref import simple_server
+from flask_cors import CORS, cross_origin
+import os
+import flask_monitoringdashboard as dashboard
 from flask import Flask, render_template, url_for, redirect, request
+import sys
+SCRIPT_DIR = os.path.dirname(os.path.abspath(r"classes/app_helper.py"))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 from classes.app_helper import (ValuePredictorCancer, ValuePredictorDiabetes, ValuePredictorKidney,CustomLabelEncode,
                                 ValuePredictorHeart, ValuePredictorLiver)
 import  joblib
 import  numpy as np 
 
+os.putenv('LANG', 'en_US.UTF-8')
+os.putenv('LC_ALL', 'en_US.UTF-8')
+
 app = Flask(__name__)
+dashboard.bind(app)
+CORS(app)
+
 @app.route("/")
+@cross_origin()
 def index():
     return render_template('index.html')
 @app.route("/about")
+@cross_origin()
 def about_app():
     return render_template('about_app.html')
 
 @app.route("/cancer")
+@cross_origin()
 def cancer():
     #return render_template(r"C:\Users\Mahesh Sharma\Desktop\HealthApp\Indivisual_Deployment\Breast_Cancer API\cancer_model.pkl")
     return render_template('cancer.html')
-'''
-def ValuePredictorCancer(to_predict_list, size):
-    to_predict = np.array(to_predict_list).reshape(1,size)
-    if(size==5):
-        loaded_model = joblib.load('cancer_model.pkl')
-        result = loaded_model.predict(to_predict)
-    return result[0]
-'''
 @app.route('/predict_cancer', methods = ["POST"])
+@cross_origin()
 def predict_cancer():
     if request.method == "POST":
         if request.json is not None:
@@ -53,10 +64,12 @@ def predict_cancer():
             return(render_template("predict_cancer.html", prediction_text=prediction)) 
 #-----------------------------------------------------------------------------------------------------------------------------   
 @app.route("/diabetes")
+@cross_origin()
 def diabetes():
     return render_template("diabetes.html")
 
 @app.route('/predict_diabetes', methods = ["POST"])
+@cross_origin()
 def predict_diabetes():
     if request.method == "POST":
         if request.json is not None:
@@ -83,9 +96,11 @@ def predict_diabetes():
             return(render_template("predict_diabetes.html", prediction_text=prediction))
 #-----------------------------------------------------------------------------------------------------------------------------
 @app.route("/heart")
+@cross_origin()
 def heart():
     return render_template("heart.html")
 @app.route('/predict_heart', methods = ["POST"])
+@cross_origin()
 def predict_heart():
     if request.method == "POST":
         if request.json is not None:
@@ -112,10 +127,12 @@ def predict_heart():
             return(render_template("predict_heart.html", prediction_text=prediction))
 #-----------------------------------------------------------------------------------------------------------------------------  
 @app.route("/kidney")
+@cross_origin()
 def Kindeny_fun():
     return render_template("kidney.html")
 
 @app.route('/predict_kidney', methods = ["POST"])
+@cross_origin()
 def predict_kidney():
     if request.method == "POST":
         if request.json is not None:
@@ -141,10 +158,12 @@ def predict_kidney():
             return(render_template("predict_kideny.html", prediction_text=prediction)) 
 #-----------------------------------------------------------------------------------------------------------------------------  
 @app.route("/liver")
+@cross_origin()
 def liver():
     return render_template("liver.html")
 
 @app.route('/predict_liver', methods = ["POST"])
+@cross_origin()
 def predict_liver():
     if request.method == "POST":
         if request.json is not None:
@@ -169,5 +188,11 @@ def predict_liver():
                 prediction = f"No need to worry, as your probability of getting the disease is {round(probabilities_liver[1],2)}% which is less than 50%"
     return(render_template("predict_liver.html", prediction_text=prediction))  
 
-if __name__ == "__main__" :
-    app.run(debug=True)
+port = int(os.getenv("PORT", 5000))
+if __name__ == "__main__":
+    #app.run(debug=False)
+    host = '0.0.0.0'
+    #port = 5000
+    httpd = simple_server.make_server(host, port, app)
+    print("Serving on %s %d" % (host, port))
+    httpd.serve_forever()
